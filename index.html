@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-green-500">
+    <div class="py-10 text-center">
+      <p class="text-6xl text-stone-100">Budget App</p>
+      <div class="flex flex-col w-3/4 mx-auto space-y-2">
+        <button
+          id="budgetBtn"
+          data-modal-target="authentication-modal"
+          data-modal-toggle="authentication-modal"
+          type="button"
+          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-10"
+        >
+          Update Budget
+        </button>
+        <div
+          id="authentication-modal"
+          tabindex="-1"
+          aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+          <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div
+                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Enter Budget Amount
+                </h3>
+                <button
+                  type="button"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                  <div>
+                    <label
+                      for="budget"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Budget Amount ($):</label
+                    >
+                    <input
+                      type="number"
+                      name="budget"
+                      id="budget"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="$"
+                      required
+                    />
+                  </div>
+                  <button
+                    id="submitBudgetBtn"
+                    type="submit"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    data-modal-hide="authentication-modal"
+                  >
+                    Update Budget Amount
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="addBtn"
+          data-modal-target="authentication-modal-1"
+          data-modal-toggle="authentication-modal-1"
+          type="button"
+          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-10"
+        >
+          Add Expense
+        </button>
+
+        <div
+          id="authentication-modal-1"
+          tabindex="-1"
+          aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+          <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div
+                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Enter Expense:
+                </h3>
+                <button
+                  type="button"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal-1"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                  <div>
+                    <label
+                      for="expense"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Expense Name:</label
+                    >
+                    <input
+                      type="text"
+                      name="expense"
+                      id="expense"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="number"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Expense Amount ($):</label
+                    >
+                    <input
+                      type="number"
+                      name="number"
+                      id="number"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Amount $"
+                      required
+                    />
+                  </div>
+                  <button
+                    id="submitExpenseBtn"
+                    type="submit"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    data-modal-hide="authentication-modal-1"
+                  >
+                    Add Expense
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="manageBtn"
+          data-modal-target="authentication-modal-2"
+          data-modal-toggle="authentication-modal-2"
+          type="button"
+          class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-10"
+        >
+          Manage Expenses
+        </button>
+
+        <div
+          id="authentication-modal-2"
+          tabindex="-1"
+          aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+          <div class="relative p-4 w-full max-w-md max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div
+                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Remove an Expense:
+                </h3>
+                <button
+                  type="button"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal-2"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div id="expenseModal" class="p-4 md:p-5">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-green-500 h-64">
+      <div class="bg-orange-200 h-60 w-11/12 mx-auto rounded-lg">
+        <p class="text-center text-3xl pt-3 underline-offset-4 underline">
+          Total Budget:
+        </p>
+        <p id="budgetDisplay" class="text-center text-5xl pt-16">Update budget</p>
+      </div>
+    </div>
+
+    <div
+      class="bg-orange-200 min-h-36 w-11/12 mx-auto rounded-lg space-y-3 pb-4"
+    >
+      <p class="text-center text-xl">Expenses:</p>
+      <div id="expenseDiv" class="divide-y-2 divide-stone-700">
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+  </body>
+</html>
